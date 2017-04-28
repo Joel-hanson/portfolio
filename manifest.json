@@ -1,0 +1,7 @@
+{
+  "name": "Joel Hanson | portfolio",
+  "short_name": "Joel Hanson | portfolio",
+  "description": "My portfolio web site",
+  "start_url": "/",
+  "display": "standalone"
+}

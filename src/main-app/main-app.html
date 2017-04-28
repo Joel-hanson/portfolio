@@ -1,0 +1,56 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<dom-module id="main-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+paper-toolbar{
+  height: 56px;
+  background-color: #283044;
+}
+h1{
+font-family: 'Open Sans', sans-serif;
+margin: 0;
+}
+.container{
+margin: 16px;
+}
+.test{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+}
+    </style>
+
+<paper-toolbar>
+<div class="container">
+<h1>Joel Hanson</h1>
+</div>
+</paper-toolbar>
+<div class="test">
+  <p>
+    
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
+
+
+
+</div>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'main-app',
+
+      properties: {
+
+      },
+
+    });
+  </script>
+</dom-module>
