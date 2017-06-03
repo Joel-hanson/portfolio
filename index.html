@@ -1,35 +1,71 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>Joel Hanson | portfolio</title>
-    <meta name="description" content="Joel Hanson | portfolio description">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <!-- See https://goo.gl/OOhYW5 -->
-    <link rel="manifest" href="/manifest.json">
-
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
-    <link rel="import" href="/src/main-app/main-app.html">
-  <style type="text/css">
-
-      body,html{
-        margin: 0;padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main-app></main-app>
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-
- <script type="text/javascript">
-   WebFont.load({
-    google: {
-      families: ['Open Sans:300']
+  <title>Joel Hanson | Web Developer and Machine Learning Enthusiast</title>
+  <meta name="description" content="my portfolio">
+  <meta name="theme-color" content="#f44336">
+  <link rel="shortcut icon" href="image/joel1.jpg">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="import" href="/src/joel-app.html">
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Roboto', Helvetica, sans-serif;
     }
-  });
- </script>
-  </body>
+  </style>
+</head>
+
+<body>
+  <joel-app></joel-app>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(function () {
+        console.log("sw registered");
+      });
+  }
+</script>
+<noscript>
+  javascript is disabled or the having trouble with the network or browser
+</noscript>
+<script>
+  (function () {
+    'use strict';
+    var onload = function () {
+      if (!window.HTMLImports) {
+        document.dispatchEvent(
+          new CustomEvent('WebComponentsReady', {
+            bubbles: true
+          })
+        );
+      }
+    };
+
+    var webComponentsSupported = (
+      'registerElement' in document &&
+      'import' in document.createElement('link') &&
+      'content' in document.createElement('template')
+    );
+    if (!webComponentsSupported) {
+      var script = document.createElement('script');
+      script.prefetch = true;
+      script.src =
+        'bower_components/webcomponentsjs/webcomponents-lite.js';
+      script.onload = onload;
+      document.head.appendChild(script);
+    } else {
+      onload();
+    }
+  })();
+</script>
+
 </html>

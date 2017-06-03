@@ -1,7 +1,31 @@
 {
-  "name": "Joel Hanson | portfolio",
-  "short_name": "Joel Hanson | portfolio",
-  "description": "My portfolio web site",
-  "start_url": "/",
-  "display": "standalone"
+  "name": "Joel Hanson | Portfolio",
+  "short_name": "Joel",
+  "description": "my portfolio",
+  "icons": [
+    {
+      "src": "image/joel1.jpg",
+      "type": "image/jpg",
+      "sizes": "48x48"
+    },
+    {
+      "src": "image/joel1.jpg",
+      "type": "image/jpg",
+      "sizes": "96x96"
+    },
+     {
+      "src": "image/joel1.jpg",
+      "type": "image/jpg",
+      "sizes": "1080x1080"
+    },
+    {
+      "src": "image/joel1.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f44336",
+  "theme_color": "#f44336"
 }
