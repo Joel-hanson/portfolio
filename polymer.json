@@ -1,15 +1,23 @@
 {
   "entrypoint": "index.html",
-  "fragments": [],
+  "shell": "src/joel-app.html",
+  "fragments": [
+      "src/joel-footer.html",
+      "src/joel-header.html",
+      "src/joel-section.html"
+  ],
   "sources": [
     "src/**/*",
     "index.html",
-    "image/joel1.jpg"
-
+    "images/*",
+    "document/*"
   ],
   "extraDependencies": [
-    "bower_components/webcomponentsjs/*.js",
-    "manifest.json"
+    "bower_components/webcomponentsjs/webcomponents-lite.js",
+    "manifest.json",
+    "firebase-messaging-sw.js",
+    "bower_components/firebase/firebase-app.js",
+    "bower_components/firebase/firebase-messaging.js"
   ],
   "builds": [{
     "name": "es6-bundled",
@@ -17,7 +25,7 @@
       "es2016"
     ],
     "js": {
-      "minify": true,
+      "minify": false,
       "compile": false
     },
     "css": {

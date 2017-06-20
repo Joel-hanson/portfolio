@@ -3,8 +3,11 @@ module.exports = {
     '/index.html',
     '/manifest.json',
     '/bower_components/webcomponentsjs/webcomponents-lite.js',
-    '/image/joel1.jpg',
-    '/service-worker.js'
+    '/image/*',
+    '/service-worker.js',
+    '/document/*',
+    '/firebase-messaging-sw.js'
+    
   ],
   navigateFallback: 'index.html',
   navigateFallbackWhitelist: [/^(?!.*\.html$|\/data\/).*/],

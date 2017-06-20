@@ -8,9 +8,12 @@
   <title>Joel Hanson | Web Developer and Machine Learning Enthusiast</title>
   <meta name="description" content="my portfolio">
   <meta name="theme-color" content="#f44336">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="image/joel1.jpg">
-  <link rel="manifest" href="/manifest.json">
   <link rel="import" href="/src/joel-app.html">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" sizes="192x192" href="/image/joel1.jpg">
+
   <style>
     html,
     body {
@@ -23,15 +26,24 @@
 
 <body>
   <joel-app></joel-app>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('/service-worker.js')
-      .then(function () {
-        console.log("sw registered");
+  if ('serviceWorker' in navigator && 'PushManager' in window) {
+    console.log('Service Worker and Push is supported');
+
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function (swReg) {
+        console.log('Service Worker is registered', swReg);
+
+        swRegistration = swReg;
+      })
+      .catch(function (error) {
+        console.error('Service Worker Error', error);
       });
+  } else {
+    console.warn('Push messaging is not supported');
+    pushButton.textContent = 'Push Not Supported';
   }
 </script>
 <noscript>
@@ -67,5 +79,7 @@
     }
   })();
 </script>
+
+
 
 </html>
